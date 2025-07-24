@@ -14,7 +14,7 @@ This is a Laravel-based backend for a Real-Time Bidding (RTB) system. It allows 
 ### Steps to Run
 1. **Clone the Repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/sivasamyt/rtb-system.git
    cd rtb-system
    ```
 
@@ -23,10 +23,8 @@ This is a Laravel-based backend for a Real-Time Bidding (RTB) system. It allows 
    composer install
    ```
 
-3. **Copy Environment File**
-   ```bash
-   cp .env.example .env
-   ```
+3. **Environment File**
+   - git have .env file also.
 
 4. **Set Up Docker**
    - Ensure Docker is running.
@@ -35,11 +33,16 @@ This is a Laravel-based backend for a Real-Time Bidding (RTB) system. It allows 
      DB_CONNECTION=mysql
      DB_HOST=mysql
      DB_PORT=3306
-     DB_DATABASE=rtb
-     DB_USERNAME=rtb_user
-     DB_PASSWORD=rtb_password
+     DB_DATABASE=your_db_name
+     DB_USERNAME=your_db_user_name
+     DB_PASSWORD=your_db_password
      REDIS_HOST=redis
      REDIS_PORT=6379
+     ```
+   - Update `docker-compose.yml` with:
+     ```
+     MYSQL_DATABASE: your_db_name
+     MYSQL_ROOT_PASSWORD: your_db_password
      ```
    - Run Docker Compose:
      ```bash
