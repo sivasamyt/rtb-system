@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Jobs\ProcessBid;
 use App\Models\AdSlot;
+use App\Models\Bid;
 
 class BidController extends Controller
 {

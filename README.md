@@ -104,8 +104,8 @@ This is a Laravel-based backend for a Real-Time Bidding (RTB) system. It allows 
 A Postman collection is included in `postman_collection.json` for testing the APIs:
 - `POST /api/login`: Authenticate and get a token.
 - `GET /api/slots`: List ad slots with optional status filter.
-- `POST /api/slots/{id}/bid`: Place a bid on an open slot.
-- `GET /api/slots/{id}/bids`: View all bids for a slot.
-- `GET /api/slots/{id}/winner`: View the winning bid (if awarded).
+- `POST /api/slots/{slot_id}/bid`: Place a bid on an open slot.
+- `GET /api/slots/{slot_id}/bids`: View all bids for a slot.
+- `GET /api/slots/{slot_id}/winner`: View the winning bid (if awarded).
 - `GET /api/user/bids`: View the authenticated user’s bid history.
 - `POST /api/slots` (Admin): Create a new ad slot.
