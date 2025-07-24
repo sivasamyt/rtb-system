@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\AdSlot;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@test.com',
+            'password' => bcrypt('password'),
+            'is_admin' => true,
+        ]);
+        User::create([
+            'name' => 'User',
+            'email' => 'user@test.com',
+            'password' => bcrypt('password'),
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        AdSlot::create([
+            'name' => 'Banner Ad',
+            'start_time' => Carbon::now()->addMinutes(5),
+            'end_time' => Carbon::now()->addHours(1),
+            'min_bid_price' => 10.00,
+            'status' => 'upcoming',
+        ]);
     }
 }
